@@ -1,0 +1,265 @@
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../valo/valo.scss";
+
+$eagleblue: #4570b4;
+$eaglegreen: #a2c037;
+$eagleorange: #cb4f24;
+$eagleteal: #56a099;
+$eaglered: #a21c26;
+$eagleyellow: #ffba66;
+
+@mixin linear-gradient-progressBar($color){
+    background-image:-moz-linear-gradient(top,$color 2%, $color 98%);/* For Firefox (3.6 to 15) */
+    background-image:-o-linear-gradient(top,$color 2%, $color 98%);/* For old Opera (11.1 to 12.0) */ 
+    @include linear-gradient (to bottom, $color 2%, $color 98%);/* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3, IE10+*/
+	}
+
+/* This contains all of your theme. */
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin eagle {
+	/* Include all the styles from the liferay theme */
+	
+  	@include valo;
+  	
+  	&.v-app, &.v-app-loading {
+    	background: transparent;
+   	
+	}
+	
+	
+  	
+  	/* Insert your theme rules here */
+  	
+  	.labelBadgeTitleOC.v-label {
+    color: #95c11f;
+    font-size: larger;
+    line-height: 24pt;
+    }
+   
+    .labelBadgeTitleRev.v-label {
+    color: #E94E1B;
+    font-size: larger;
+    line-height: 24pt;
+    }
+    
+    .labelBadgeTitleGrey.v-label {
+    color: #767676;
+    font-size: larger;
+    line-height: 24pt;
+    }
+    
+    .labelBadgeTitleNet.v-label {
+    color: #1D71B8;
+    font-size: larger;
+    line-height: 24pt;
+    }
+      
+	.imageBadgeStar.v-image{
+	width : 25.6%;
+	margin-left : 87.2%;
+	margin-top : 20%;
+    
+	}
+	
+	.labelBadgeLevel.v-label{
+    font-size: smaller;
+    margin-left : 80%;
+    
+	} 
+	
+	.labelDashboardTitle.v-label {
+	width: 100%;
+	font-family: arial, sans-serif;
+	box-sizing: border-box;
+	margin :0;
+	padding : 0;
+	list-style-type:none;
+	font-size: 24pt;
+	} 
+	
+	.labelInfo.v-label {
+	width: 100%;
+	font-family: arial, sans-serif;
+	box-sizing: border-box;
+	margin :0;
+	padding : 0;
+	list-style-type:none;
+	font-size: 8pt;
+	} 
+	
+	.v-table-cell-content-black{
+		background: white;
+    	color: black;
+	}
+	
+	.v-table-cell-content-red{
+		background: white;
+    	color: #E94E1B;
+	}
+	
+	.v-table-cell-content-green{
+		background: white;
+    	color: #95c11f;
+	}
+	
+	.v-table-cell-content-blue{
+		background: white;
+    	color: #1D71B8;
+	}
+	   
+	.gridLayoutSubjects.v-gridlayout{
+			border-top-style: solid;
+			border-top-color: #4570b4;		
+	}
+	
+	.buttonSubjectsListAct.v-button{
+		    background: #4570b4;
+		    color: #fafafa;
+		    border-style:hidden;
+		    width: 100px;
+		    font-size: 11px
+		    }
+		    
+	.buttonSubjectsEmptyAct.v-button{
+		    background: #fafafa;
+		    color: #c5c5c5;
+		    border-color: #c5c5c5;
+		    width: 100px;
+		    font-size: 11px
+		    }
+		    
+	 .gridLayoutResources.v-gridlayout{
+			border-top-style: solid;
+			border-top-color: #cb4f24;
+			
+	}
+	
+	
+	.buttonResourcesListAct.v-button{
+		    background: #cb4f24;
+		    color: #fafafa;
+		    border-style:hidden;
+		    width: 100px;
+		    font-size: 11px
+		    }
+		    
+	.buttonResourcesEmptyAct.v-button{
+		    background: #fafafa;
+		    color: #c5c5c5;
+		    border-color: #c5c5c5;
+		    width: 100px;
+		    font-size: 11px
+		    }
+		    
+	.popupviewActivities.v-popupview{
+			width: 100px;
+	}
+		    
+
+	.tableAch.v-table>.v-table-header-wrap{
+	font-size: medium;
+	font-weight: bold
+	}
+	
+	.tableTasks.v-table>.v-table-header-wrap{
+	font-size: medium;
+	font-weight: bold
+	}
+	
+
+  	.progressBarOC.v-progressbar{
+    box-sizing:border-box;
+    width:100%;
+    height:20px;
+    border: #95c11f 3px solid;
+    border-radius:5px 0 5px 5px;
+    background-color:#95c11f;
+    margin-top:1px;
+	}
+	
+	.progressBarOC.v-progressbar>.v-progressbar-wrapper{
+	width:100%;
+	height : 100%;
+	@include linear-gradient-progressBar(#FFFFFF);
+
+	}
+	
+	.progressBarOC.v-progressbar>.v-progressbar-wrapper>.v-progressbar-indicator{
+    @include linear-gradient-progressBar(#95c11f);
+    border: #95c11f;
+    
+    }
+    
+    .progressBarRev.v-progressbar{
+    box-sizing:border-box;
+    width:100%;
+    height:20px;
+    border: #E94E1B 3px solid;
+    border-radius:5px 0 5px 5px;
+    background-color:#E94E1B;
+    margin-top:1px;
+	}
+	
+	.progressBarRev.v-progressbar>.v-progressbar-wrapper{
+	width:100%;
+	height : 100%;
+	@include linear-gradient-progressBar(#FFFFFF);
+
+	}
+	
+	.progressBarRev.v-progressbar>.v-progressbar-wrapper>.v-progressbar-indicator{
+    @include linear-gradient-progressBar(#E94E1B);
+    border: #E94E1B;
+    
+    }
+    
+    .progressBarGrey.v-progressbar{
+    box-sizing:border-box;
+    width:100%;
+    height:20px;
+    border: #767676 3px solid;
+    border-radius:5px 0 5px 5px;
+    background-color:#767676;
+    margin-top:1px;
+	}
+
+	.progressBarGrey.v-progressbar>.v-progressbar-wrapper{
+	width:100%;
+	height : 100%;
+	@include linear-gradient-progressBar(#FFFFFF);
+	}
+	
+  	.progressBarGrey.v-progressbar>.v-progressbar-wrapper>.v-progressbar-indicator{
+    @include linear-gradient-progressBar(#767676);
+    border: #767676;
+    }
+     
+     .progressBarNet.v-progressbar{
+    box-sizing:border-box;
+    width:100%;
+    height:20px;
+    border: #1D71B8 3px solid;
+    border-radius:5px 0 5px 5px;
+    background-color:#1D71B8;
+    margin-top:1px;
+	}
+	
+	.progressBarNet.v-progressbar>.v-progressbar-wrapper{
+	width:100%;
+	height : 100%;
+	@include linear-gradient-progressBar(#FFFFFF);
+
+	}
+	
+	.progressBarNet.v-progressbar>.v-progressbar-wrapper>.v-progressbar-indicator{
+    @include linear-gradient-progressBar(#1D71B8);
+    border: #1D71B8;
+    }
+    
+    
+    
+    
+    
+    
+    
+}

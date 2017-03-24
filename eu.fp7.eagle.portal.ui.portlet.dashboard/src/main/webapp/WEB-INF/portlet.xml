@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+             http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	version="2.0">
+
+	<portlet>
+		<description>Vaadin 7 based Eagle Dashboard Portlet</description>
+		<portlet-name>Eagle Dashboard</portlet-name>
+		<display-name>Dashboard</display-name>
+
+		<portlet-class>com.vaadin.server.VaadinPortlet</portlet-class>
+
+		<init-param>
+			<name>UI</name>
+			<value>eu.fp7.eagle.portal.ui.portlet.dashboard.EagleDashboardUI</value>
+		</init-param>
+
+		<init-param>
+			<name>vaadin.resources.path</name>
+			<value>PORTLET_CONTEXT</value>
+		</init-param>
+
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+
+
+		<portlet-info>
+			<title>Eagle Dashboard</title>
+			<short-title>Dashboard</short-title>
+			<keywords>Vaadin 7, dashboard</keywords>
+		</portlet-info>
+
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+
+	</portlet>
+</portlet-app>
